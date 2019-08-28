@@ -10,6 +10,18 @@
 #include <sys/wait.h>
 #include <limits.h>
 #include <signal.h>
+
+/**
+ * struct variables - structure of needed shell variables
+ * @arguments: arguments entered in the shell
+ * @buffer: buffer needed to store the getline function
+ * @env: array of environment variables
+ * @count: count of enterd commands
+ * @argv: array of commands entered to the main function
+ * @status: status to be entered in exit value
+ * @commands: commands entered to the shell (multicommand feature)
+*/
+
 typedef struct variables
 {
 	char **arguments;
@@ -20,6 +32,12 @@ typedef struct variables
 	int status;
 	char **commands;
 } variables_t;
+
+/**
+ * struct builtins - builtins of the shell
+ * @name: name of the function
+ * @function: builtin function to be executed
+*/
 
 typedef struct builtins
 {
