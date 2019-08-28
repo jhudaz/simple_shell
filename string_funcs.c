@@ -1,5 +1,10 @@
 #include "holberton.h"
-
+/**
+ * _strcmpr - function that compare two strings
+ * @strcmp1: char pointer
+ * @strcmp2: char pointer
+ * Return: int
+*/
 int _strcmpr(char *strcmp1, char *strcmp2)
 {
 	int i;
@@ -13,7 +18,11 @@ int _strcmpr(char *strcmp1, char *strcmp2)
 	}
 	return (strcmp1[i] - strcmp2[i]);
 }
-
+/**
+ * _strdup - function that duplicate a string
+ * @strtodup: pointer char, string to duplicate
+ * Return: char pointer, copy
+ */
 char *_strdup(char *strtodup)
 {
 	char *copy;
@@ -32,7 +41,12 @@ char *_strdup(char *strtodup)
 
 	return (copy);
 }
-
+/**
+ * _strcat - function that concatenate two strings
+ * @strc1: char pointer
+ * @strc2: char pointer
+ * Return: char pointer, new string
+ */
 char *_strcat(char *strc1, char *strc2)
 {
 	char *newstring;

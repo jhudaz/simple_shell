@@ -1,14 +1,18 @@
 # SIMPLE SHELL
 - - -
+
 Shell developed in C language. A shell is a command line interface (CLI) program that takes commands entered by a user from a keyboard and gives them to the operating system to execute. The shell is like the medium through which a user communicates with the kernel to understand how a shell program works.
+
+
 ## Environment
 Simple Shell was built and tested in the Ubuntu 14.04 LTS via Vagrant in VirtualBox and compiled with GCC version 4.8.4
+
 ## Respository Contents
-Simple Shell functions used:
+Simple Shell files:
+
 | **Function** | **Description** |
 |----------|-----------------|
 |main| principal function that call the other functions|
-|_realloc|reallocates memory|
 |check_match|checks if a character matches any in a string|
 |_strtok|tokenize a string|
 |is_builtin|checks if entered command is a builtin|
@@ -32,12 +36,21 @@ Simple Shell functions used:
 |_strdup|duplicate a string|
 |_strcat|concatenate two strings|
 |_strlen| count the length of a string|
+
+
 ## How to Install
 Download the repository [here](https://github.com/dacastanogo/simple_shell) or use this command to clone it:
+```
 git clone https://github.com/dacastanogo/simple_shell.git
+```
+
 ## How to Compile
+```
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+```
+
 ## Example Output
+```
 $ pwd
 /home/jaime/Desktop/simple_shell
 
@@ -45,16 +58,16 @@ $ /bin/pwd
 /home/jaime/Desktop/simple_shell
 
 $ ls
-a.out        environment.c        path_funcs.c    simple_shell.c    trustyshell
-AUTHORS     error_management.c    print_string.c    split_line.c
-built_in.c  holberton.h            README.md        string_funcs.c
-_calloc.c   hsh                    _realloc.c        _strtok.c
+a.out	    environment.c	    path_funcs.c    simple_shell.c	trustyshell
+AUTHORS     error_management.c	print_string.c	split_line.c
+built_in.c  holberton.h		    README.md	    string_funcs.c
+_calloc.c   hsh			        _realloc.c	    _strtok.c
 
 $ /bin/ls
-a.out        environment.c        path_funcs.c    simple_shell.c    trustyshell
-AUTHORS     error_management.c    print_string.c    split_line.c
-built_in.c  holberton.h            README.md        string_funcs.c
-_calloc.c   hsh                    _realloc.c        _strtok.c
+a.out	    environment.c	    path_funcs.c	simple_shell.c	trustyshell
+AUTHORS     error_management.c	print_string.c	split_line.c
+built_in.c  holberton.h		    README.md	    string_funcs.c
+_calloc.c   hsh			        _realloc.c	    _strtok.c
 
 $ ls -la
 total 132
@@ -79,8 +92,11 @@ drwxrwxr-x  8 jaime jaime  4096 Aug 27 07:09 .git
 -rw-rw-r--  1 jaime jaime  1276 Aug 27 06:27 _strtok.c
 -rwxrwxr-x  1 jaime jaime 18622 Aug 27 06:27 trustyshell
 drwxrwxr-x  2 jaime jaime  4096 Aug 26 14:12 .vscode
+```
+
 ## Authors
 * [Daniel Castano](https://github.com/dacastanogo)
 * [Jaime Andres Velez](https://github.com/jhudaz)
+
 ## Licence
 MIT
