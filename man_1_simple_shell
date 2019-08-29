@@ -5,7 +5,7 @@ hsh \- command interpreter (shell)
 
 .SH SYNOPSIS
 .PP
-.B ./hsh 
+.B ./hsh
 
 
 .SH DESCRIPTION
@@ -90,7 +90,7 @@ cd
 .RE
 .B Output:
 .br
-change the path 
+change the path
 
 .SH AUTHOR
 Writen by Daniel Castano and Jaime Velez

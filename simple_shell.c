@@ -48,7 +48,6 @@ int main(int argc __attribute__((unused)), char **argv, char **environment)
 
 	while (getline(&(vbles.buffer), &(getline_buffer), stdin))
 	{
-		sig_flag = 1;
 		vbles.count++;
 		vbles.commands = split_line(vbles.buffer, ";");
 		for (i = 0; vbles.commands && vbles.commands[i] != NULL; i++)
@@ -61,7 +60,6 @@ int main(int argc __attribute__((unused)), char **argv, char **environment)
 		}
 		free(vbles.buffer);
 		free(vbles.commands);
-		sig_flag = 0;
 		if (non_interactive == 0)
 			_puts("$ ");
 		vbles.buffer = NULL;
