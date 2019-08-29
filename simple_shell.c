@@ -1,10 +1,7 @@
 #include "holberton.h"
 
-
-unsigned int sig_flag;
-
 /**
- * signal_handler - handles signals and write the prompt
+ * sig_handler - handles signals and write the prompt
  * @sig: signal to handle
  *
  * Return: void
@@ -12,10 +9,11 @@ unsigned int sig_flag;
 
 static void sig_handler(int sig)
 {
-	(void) sig;
+	unsigned int sig_flag;
+	(void)sig;
 	if (sig_flag == 0)
 	{
-		 _puts("\n");
+		_puts("\n");
 		write(STDOUT_FILENO, "$ ", 2);
 		fflush(stdout);
 	}
@@ -25,7 +23,6 @@ static void sig_handler(int sig)
 		fflush(stdout);
 	}
 }
-
 
 /**
  * main - function that receives configurations files to run the shell
@@ -43,12 +40,12 @@ int main(int argc __attribute__((unused)), char **argv, char **environment)
 	vbles.argv = argv;
 	vbles.env = read_env(environment);
 	signal(SIGINT, sig_handler);
-	
+
 	if (!isatty(STDIN_FILENO))
 		non_interactive = 1;
 	if (non_interactive == 0)
 		_puts("$ ");
-	
+
 	while (getline(&(vbles.buffer), &(getline_buffer), stdin))
 	{
 		sig_flag = 1;
