@@ -63,7 +63,7 @@ char *_uitoa(unsigned int count)
 	if (numstr == NULL)
 	{
 		perror("Fatal Error1");
-		exit(127);
+		exit(1);
 	}
 	numstr[digits] = '\0';
 	for (--digits; count; --digits)

@@ -71,21 +71,21 @@ int execute_cwd(variables_t *vbles)
 				if (WIFEXITED(vbles->status))
 					vbles->status = WEXITSTATUS(vbles->status);
 				else if (WIFSIGNALED(vbles->status) && WTERMSIG(vbles->status) == SIGINT)
-					vbles->status = 130;
+					vbles->status = 1;
 				return (0);
 			}
-			vbles->status = 127;
+			vbles->status = 1;
 			return (1);
 		}
 		else
 		{
 			print_error(vbles, ": Permission denied\n");
-			vbles->status = 126;
+			vbles->status = 1;
 		}
 			return (0);
 	}
 	print_error(vbles, ": not found\n");
-	vbles->status = 127;
+	vbles->status = 1;
 	return (0);
 }
 
@@ -125,14 +125,14 @@ void check_for_path(variables_t *vbles)
 			free(path_dup);
 			if (path_tokens == NULL)
 			{
-				vbles->status = 127;
+				vbles->status = 1;
 				new_exit(vbles);
 			}
 		}
 		if (path == NULL || path_tokens[i] == NULL)
 		{
 			print_error(vbles, ": not found\n");
-			vbles->status = 127;
+			vbles->status = 1;
 		}
 		free(path_tokens);
 	}
@@ -167,16 +167,16 @@ int path_execute(char *command, variables_t *vbles)
 			if (WIFEXITED(vbles->status))
 				vbles->status = WEXITSTATUS(vbles->status);
 			else if (WIFSIGNALED(vbles->status) && WTERMSIG(vbles->status) == SIGINT)
-				vbles->status = 130;
+				vbles->status = 1;
 			return (0);
 		}
-		vbles->status = 127;
+		vbles->status = 1;
 		return (1);
 	}
 	else
 	{
 		print_error(vbles, ": Permission denied\n");
-		vbles->status = 126;
+		vbles->status = 1;
 	}
 	return (0);
 }
