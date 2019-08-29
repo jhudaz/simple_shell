@@ -9,19 +9,10 @@
 
 static void sig_handler(int sig)
 {
-	unsigned int sig_flag;
 	(void)sig;
-	if (sig_flag == 0)
-	{
-		_puts("\n");
-		write(STDOUT_FILENO, "$ ", 2);
-		fflush(stdout);
-	}
-	else
-	{
-		_puts("\n");
-		fflush(stdout);
-	}
+	_puts("\n");
+	write(STDOUT_FILENO, "$ ", 2);
+	fflush(stdout);
 }
 
 /**
